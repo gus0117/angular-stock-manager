@@ -1,0 +1,6 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.btn-circle.btn-xl {
+    border-width: 2px;
+    border-radius: 50%;
+}

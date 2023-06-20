@@ -1,0 +1,36 @@
+<!-- Button trigger modal -->
+<div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-outline-info btn-circle btn-xl my-4" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="resetItem()">
+    <i class="fs-2 bi bi-plus-circle"></i>
+  </button>
+</div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Item</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form novalidate (ngSubmit)="addItem()" #newItemForm="ngForm">
+                <div class="mb-3">
+                  <label for="itemNameInput" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="itemNameInput" name="itemName" [(ngModel)]="newItem.itemName">
+                </div>
+                <div class="mb-3">
+                  <label for="itemPriceInput" class="form-label">Price</label>
+                  <input type="number" class="form-control" id="itemPriceInput" name="price" [(ngModel)]="newItem.price">
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!newItemForm.form.valid" data-bs-dismiss="modal">Guardar</button>
+                <button type="reset" class="btn btn-success ms-3" (click)="resetItem()">Limpiar</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>

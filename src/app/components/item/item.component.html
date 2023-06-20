@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-around align-items-center my-4 py-3 px-1 bg-info bg-opacity-10 border border-info rounded-end rounded-start">
+    <h4 class="item-name text-white">
+        {{item.itemName}}
+    </h4>
+    <span class="item-price fs-4 text-success">
+        {{item.price | currency:'$':'symbol'}}
+    </span>
+    <div class="options">
+       <!-- <button class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i></button> -->
+       <button class="btn btn-outline-danger btn-circle btn-xl my-4" (click)="deleteItem()"><i class="bi bi-trash-fill"></i></button>
+    </div>
+</div>
