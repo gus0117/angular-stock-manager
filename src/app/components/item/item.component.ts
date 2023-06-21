@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Item } from 'src/app/models/item';
+import { ItemsService } from 'src/app/services/items.service';
 
 @Component({
   selector: 'app-item',
@@ -11,7 +12,7 @@ export class ItemComponent implements OnInit {
   @Input() item!: Item;
   @Output() deleteItemEvent = new EventEmitter<Item>();
 
-  constructor() { 
+  constructor(private itemService: ItemsService) { 
 
   }
 
@@ -24,6 +25,6 @@ export class ItemComponent implements OnInit {
   }
 
   updateItem(){
-    console.log("update")
+    this.itemService.item = this.item
   }
 }

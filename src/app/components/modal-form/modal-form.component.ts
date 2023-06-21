@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { Item } from 'src/app/models/item';
 import { ItemsService } from 'src/app/services/items.service';
 
@@ -11,10 +11,18 @@ export class ModalFormComponent implements OnInit {
 
   item: Item;
   constructor(private itemService: ItemsService) {
-    this.item = this.itemService.item;
+    this.item = new Item();
   }
 
   ngOnInit(): void {
+  }
+
+  @HostListener('shown.bs.modal') onModalShow(): void {
+    this.getItem();
+  }
+
+  getItem(){
+    this.item = this.itemService.item;
   }
 
   addUpdateItem():void{
@@ -29,6 +37,8 @@ export class ModalFormComponent implements OnInit {
 
   }
 
-  resetItem():void{}
+  resetItem():void{
+    this.item = new Item();
+  }
 
 }
