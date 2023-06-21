@@ -22,4 +22,8 @@ export class ItemComponent implements OnInit {
   deleteItem(){
     this.deleteItemEvent.emit(this.item);
   }
+
+  updateItem(){
+    console.log("update")
+  }
 }

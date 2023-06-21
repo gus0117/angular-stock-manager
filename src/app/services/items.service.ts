@@ -8,10 +8,12 @@ import { Item } from '../models/item';
 export class ItemsService {
 
   listItems: Array<Item>;
+  item: Item;
   storageKey: string = 'listItems'
 
   constructor() { 
     this.listItems = new Array<Item>();
+    this.item = new Item();
   }
 
   getItems(): Array<Item>{

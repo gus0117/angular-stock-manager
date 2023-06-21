@@ -7,13 +7,15 @@ import { ItemComponent } from './components/item/item.component';
 import { ListItemsComponent } from './components/list-items/list-items.component';
 import { FormItemComponent } from './components/form-item/form-item.component';
 import { FormsModule } from '@angular/forms';
+import { ModalFormComponent } from './components/modal-form/modal-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemComponent,
     ListItemsComponent,
-    FormItemComponent
+    FormItemComponent,
+    ModalFormComponent
   ],
   imports: [
     BrowserModule,
