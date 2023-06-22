@@ -23,6 +23,6 @@ export class FormItemComponent implements OnInit {
   }
 
   resetItem(){
-    this.newItem = new Item();
+    this.itemService.item = new Item();
   }
 }

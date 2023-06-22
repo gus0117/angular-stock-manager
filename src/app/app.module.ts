@@ -8,6 +8,7 @@ import { ListItemsComponent } from './components/list-items/list-items.component
 import { FormItemComponent } from './components/form-item/form-item.component';
 import { FormsModule } from '@angular/forms';
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
+import { DisplayComponent } from './components/display/display.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ModalFormComponent } from './components/modal-form/modal-form.component
     ItemComponent,
     ListItemsComponent,
     FormItemComponent,
-    ModalFormComponent
+    ModalFormComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
